@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #2dd4bf;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+
+  html,
+  body {
+    background-color: #ffffff;
+    color: #111111;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: #111111;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+}
