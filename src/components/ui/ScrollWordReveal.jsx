@@ -22,16 +22,17 @@ export const ScrollWordReveal = ({
                 const start = range[0] + (i * step);
                 const end = Math.min(range[1], start + step * 2); // Overlap slightly for smoothness
 
-                const opacity = useTransform(progress, [start, end], [0.1, 1]);
-                const blur = useTransform(progress, [start, end], [10, 0]);
-                const y = useTransform(progress, [start, end], [10, 0]);
+                const opacity = useTransform(progress, [start, end], [0.1, 1], { clamp: true });
+                const blurVal = useTransform(progress, [start, end], [10, 0], { clamp: true });
+                const filter = useTransform(blurVal, (v) => `blur(${v}px)`);
+                const y = useTransform(progress, [start, end], [10, 0], { clamp: true });
 
                 return (
                     <motion.span
                         key={i}
                         style={{
                             opacity,
-                            filter: useTransform(blur, b => `blur(${b}px)`),
+                            filter,
                             y // Add subtle slide up
                         }}
                         className="mr-[0.25em] relative"

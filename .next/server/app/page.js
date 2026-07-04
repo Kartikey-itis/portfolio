@@ -1,0 +1,13 @@
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0i1c_v1._.js")
+R.c("server/chunks/ssr/1bwf_next_dist_esm_build_templates_app-page_1z2z0kb.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1lscl__._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0o2b8ya._.js")
+R.c("server/chunks/ssr/my-react-app_src_0hpdtix._.js")
+R.c("server/chunks/ssr/1bwf_next_dist_client_components_20xfa0x._.js")
+R.c("server/chunks/ssr/1bwf_next_dist_client_components_builtin_forbidden_0atv1h-.js")
+R.c("server/chunks/ssr/1bwf_next_dist_client_components_builtin_unauthorized_1b98kxg.js")
+R.c("server/chunks/ssr/1bwf_next_dist_client_components_builtin_global-error_147_58p.js")
+R.c("server/chunks/ssr/my-react-app__next-internal_server_app_page_actions_0a3v40w.js")
+R.m(6404)
+module.exports=R.m(6404).exports
