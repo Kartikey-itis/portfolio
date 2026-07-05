@@ -1192,14 +1192,14 @@ const Hero = ()=>{
                         className: "block md:hidden",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute bottom-0 left-0 w-full h-[46vh] bg-white"
+                                className: "absolute bottom-0 left-0 w-full h-[44vh] bg-white"
                             }, void 0, false, {
                                 fileName: "[project]/my-react-app/src/app/page.jsx",
                                 lineNumber: 186,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute bottom-[46vh] left-0 w-full h-[22vh] bg-linear-to-t from-white to-transparent"
+                                className: "absolute bottom-[44vh] left-0 w-full h-[18vh] bg-linear-to-t from-white to-transparent"
                             }, void 0, false, {
                                 fileName: "[project]/my-react-app/src/app/page.jsx",
                                 lineNumber: 188,

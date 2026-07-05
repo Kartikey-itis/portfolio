@@ -183,9 +183,9 @@ const Hero = () => {
         {/* Mobile Overlays */}
         <div className="block md:hidden">
           {/* Solid white bottom half */}
-          <div className="absolute bottom-0 left-0 w-full h-[46vh] bg-white" />
+          <div className="absolute bottom-0 left-0 w-full h-[44vh] bg-white" />
           {/* Fade strip right below the face */}
-          <div className="absolute bottom-[46vh] left-0 w-full h-[22vh] bg-linear-to-t from-white to-transparent" />
+          <div className="absolute bottom-[44vh] left-0 w-full h-[18vh] bg-linear-to-t from-white to-transparent" />
         </div>
 
         {/* Desktop Overlays */}

@@ -20,7 +20,15 @@ function AntigravityBuddy() {
     const nekoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [speechText, setSpeechText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [showSpeech, setShowSpeech] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [basePath, setBasePath] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const speechTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AntigravityBuddy.useEffect": ()=>{
+            if (("TURBOPACK compile-time value", "object") !== "undefined" && window.location.pathname.startsWith("/portfolio")) {
+                setBasePath("/portfolio");
+            }
+        }
+    }["AntigravityBuddy.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AntigravityBuddy.useEffect": ()=>{
             const isReducedMotion = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
@@ -262,6 +270,10 @@ function AntigravityBuddy() {
                 idleAnimationFrame += 1;
             }
             function frame() {
+                if (window.innerWidth < 768) {
+                    idle();
+                    return;
+                }
                 frameCount += 1;
                 const diffX = nekoPosX - mousePosX;
                 const diffY = nekoPosY - mousePosY;
@@ -300,6 +312,7 @@ function AntigravityBuddy() {
             containerEl.style.top = `${nekoPosY - 16}px`;
             const handleMouseMove = {
                 "AntigravityBuddy.useEffect.handleMouseMove": (e)=>{
+                    if (window.innerWidth < 768) return;
                     mousePosX = e.clientX;
                     mousePosY = e.clientY;
                 }
@@ -350,41 +363,44 @@ function AntigravityBuddy() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "a36507c3be4aca15",
-                children: '.oneko-container{pointer-events:none;z-index:999999;transform-origin:50%;width:32px;height:32px;transition:transform .25s cubic-bezier(.175,.885,.32,1.275);position:fixed;transform:scale(2.2)}.oneko-sprite{width:32px;height:32px;image-rendering:pixelated;pointer-events:auto;cursor:pointer;background-image:url(/oneko.gif)}.oneko-speech{color:#f8fafc;white-space:nowrap;pointer-events:none;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:1000000;background:#0f172af2;border:1px solid #ffffff26;border-radius:12px;padding:6px 12px;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;font-size:10px;font-weight:600;animation:.25s cubic-bezier(.16,1,.3,1) oneko-fade-in-up;position:absolute;bottom:44px;left:50%;transform:translate(-50%);box-shadow:0 4px 12px #0000004d}.oneko-speech:after{content:"";border:5px solid #0000;border-top-color:#0f172af2;border-bottom:0 solid #0f172af2;width:0;display:block;position:absolute;bottom:-5px;left:50%;transform:translate(-50%)}@keyframes oneko-fade-in-up{0%{opacity:0;transform:translate(-50%,6px)}to{opacity:1;transform:translate(-50%)}}'
+                id: "4ff22db95bb6759e",
+                children: '.oneko-container{pointer-events:none;z-index:999999;transform-origin:50%;width:32px;height:32px;transition:transform .25s cubic-bezier(.175,.885,.32,1.275);position:fixed;transform:scale(2.2)}@media (width<=767px){.oneko-container{inset:auto 24px 24px auto!important}}.oneko-sprite{width:32px;height:32px;image-rendering:pixelated;pointer-events:auto;cursor:pointer}.oneko-speech{color:#f8fafc;white-space:nowrap;pointer-events:none;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:1000000;background:#0f172af2;border:1px solid #ffffff26;border-radius:12px;padding:6px 12px;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;font-size:10px;font-weight:600;animation:.25s cubic-bezier(.16,1,.3,1) oneko-fade-in-up;position:absolute;bottom:44px;left:50%;transform:translate(-50%);box-shadow:0 4px 12px #0000004d}.oneko-speech:after{content:"";border:5px solid #0000;border-top-color:#0f172af2;border-bottom:0 solid #0f172af2;width:0;display:block;position:absolute;bottom:-5px;left:50%;transform:translate(-50%)}@keyframes oneko-fade-in-up{0%{opacity:0;transform:translate(-50%,6px)}to{opacity:1;transform:translate(-50%)}}'
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 ref: containerRef,
-                className: "jsx-a36507c3be4aca15" + " " + "oneko-container",
+                className: "jsx-4ff22db95bb6759e" + " " + "oneko-container",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ref: nekoRef,
                         onClick: handleNekoClick,
                         onMouseEnter: ()=>triggerSpeech("Meow? 😺"),
-                        className: "jsx-a36507c3be4aca15" + " " + "oneko-sprite"
+                        style: {
+                            backgroundImage: `url("${basePath}/oneko.gif")`
+                        },
+                        className: "jsx-4ff22db95bb6759e" + " " + "oneko-sprite"
                     }, void 0, false, {
                         fileName: "[project]/my-react-app/src/components/AntigravityBuddy.tsx",
-                        lineNumber: 336,
+                        lineNumber: 356,
                         columnNumber: 9
                     }, this),
                     showSpeech && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my$2d$react$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-a36507c3be4aca15" + " " + "oneko-speech",
+                        className: "jsx-4ff22db95bb6759e" + " " + "oneko-speech",
                         children: speechText
                     }, void 0, false, {
                         fileName: "[project]/my-react-app/src/components/AntigravityBuddy.tsx",
-                        lineNumber: 343,
+                        lineNumber: 364,
                         columnNumber: 24
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/my-react-app/src/components/AntigravityBuddy.tsx",
-                lineNumber: 335,
+                lineNumber: 355,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(AntigravityBuddy, "00YKfGmw7+HamQeVx70AWnBknEI=");
+_s(AntigravityBuddy, "nuq6pVJgh3TH3g6XjPRH+VodET4=");
 _c = AntigravityBuddy;
 var _c;
 __turbopack_context__.k.register(_c, "AntigravityBuddy");

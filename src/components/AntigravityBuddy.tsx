@@ -168,6 +168,10 @@ export default function AntigravityBuddy() {
     }
 
     function frame() {
+      if (window.innerWidth < 768) {
+        idle();
+        return;
+      }
       frameCount += 1;
       const diffX = nekoPosX - mousePosX;
       const diffY = nekoPosY - mousePosY;
@@ -217,6 +221,7 @@ export default function AntigravityBuddy() {
     containerEl.style.top = `${nekoPosY - 16}px`;
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth < 768) return;
       mousePosX = e.clientX;
       mousePosY = e.clientY;
     };
@@ -281,6 +286,15 @@ export default function AntigravityBuddy() {
           transform: scale(2.2);
           transform-origin: center center;
           transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @media (max-width: 767px) {
+          .oneko-container {
+            left: auto !important;
+            top: auto !important;
+            right: 24px !important;
+            bottom: 24px !important;
+          }
         }
 
         .oneko-sprite {
