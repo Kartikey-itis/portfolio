@@ -7,7 +7,14 @@ export default function AntigravityBuddy() {
   const nekoRef = useRef<HTMLDivElement>(null);
   const [speechText, setSpeechText] = useState("");
   const [showSpeech, setShowSpeech] = useState(false);
+  const [basePath, setBasePath] = useState("");
   const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.pathname.startsWith("/portfolio")) {
+      setBasePath("/portfolio");
+    }
+  }, []);
 
   useEffect(() => {
     const isReducedMotion =
@@ -279,7 +286,6 @@ export default function AntigravityBuddy() {
         .oneko-sprite {
           width: 32px;
           height: 32px;
-          background-image: url("/oneko.gif");
           image-rendering: pixelated;
           pointer-events: auto;
           cursor: pointer;
@@ -338,6 +344,7 @@ export default function AntigravityBuddy() {
           ref={nekoRef}
           onClick={handleNekoClick}
           onMouseEnter={() => triggerSpeech("Meow? 😺")}
+          style={{ backgroundImage: `url("${basePath}/oneko.gif")` }}
         />
         {/* Speech bubble following Oneko container */}
         {showSpeech && <div className="oneko-speech">{speechText}</div>}
