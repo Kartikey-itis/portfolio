@@ -74,8 +74,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-green-500: #00c758;
-    --color-cyan-400: #00d2ef;
-    --color-cyan-500: #00b7d7;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -136,7 +134,6 @@
     --blur-sm: 8px;
     --blur-md: 12px;
     --blur-xl: 24px;
-    --blur-3xl: 64px;
     --default-transition-duration: .15s;
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-sans);
@@ -146,8 +143,6 @@
   @supports (color: lab(0% 0 0)) {
     :root, :host {
       --color-green-500: lab(70.5521% -66.5147 45.8072);
-      --color-cyan-400: lab(76.6045% -40.9406 -29.6231);
-      --color-cyan-500: lab(67.805% -35.3952 -30.2018);
       --color-gray-50: lab(98.2596% -.247031 -.706708);
       --color-gray-100: lab(96.1596% -.082314 -1.13575);
       --color-gray-200: lab(91.6229% -.159085 -2.26791);
@@ -504,10 +499,6 @@
     bottom: 28vh;
   }
 
-  .bottom-\[44vh\] {
-    bottom: 44vh;
-  }
-
   .bottom-\[46vh\] {
     bottom: 46vh;
   }
@@ -698,10 +689,6 @@
     height: calc(var(--spacing) * 36);
   }
 
-  .h-40 {
-    height: calc(var(--spacing) * 40);
-  }
-
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
@@ -718,10 +705,6 @@
     height: calc(var(--spacing) * 80);
   }
 
-  .h-\[1px\] {
-    height: 1px;
-  }
-
   .h-\[15vh\] {
     height: 15vh;
   }
@@ -730,20 +713,12 @@
     height: 22vh;
   }
 
-  .h-\[24vh\] {
-    height: 24vh;
-  }
-
   .h-\[28vh\] {
     height: 28vh;
   }
 
   .h-\[30vh\] {
     height: 30vh;
-  }
-
-  .h-\[44vh\] {
-    height: 44vh;
   }
 
   .h-\[46vh\] {
@@ -1194,11 +1169,6 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
-  .from-transparent {
-    --tw-gradient-from: transparent;
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-
   .from-white {
     --tw-gradient-from: var(--color-white);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1215,36 +1185,6 @@
   }
 
   .via-black\/50 {
-    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
-  }
-
-  .via-cyan-400\/40 {
-    --tw-gradient-via: #00d2ef66;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .via-cyan-400\/40 {
-      --tw-gradient-via: color-mix(in oklab, var(--color-cyan-400) 40%, transparent);
-    }
-  }
-
-  .via-cyan-400\/40 {
-    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
-  }
-
-  .via-cyan-500\/50 {
-    --tw-gradient-via: #00b7d780;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .via-cyan-500\/50 {
-      --tw-gradient-via: color-mix(in oklab, var(--color-cyan-500) 50%, transparent);
-    }
-  }
-
-  .via-cyan-500\/50 {
     --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
@@ -1593,11 +1533,6 @@
     .shadow-black\/20 {
       --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-black) 20%, transparent) var(--tw-shadow-alpha), transparent);
     }
-  }
-
-  .blur-3xl {
-    --tw-blur: blur(var(--blur-3xl));
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
   .blur-sm {
