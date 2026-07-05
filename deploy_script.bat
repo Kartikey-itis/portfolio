@@ -6,4 +6,5 @@ git commit -m "Deploy_Update"
 git branch -M main
 git remote add origin https://github.com/kartikey-itis/portfolio.git
 git remote set-url origin https://github.com/kartikey-itis/portfolio.git
+git push -u origin main
 call npm run deploy
